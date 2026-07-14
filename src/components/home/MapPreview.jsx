@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import locations from "@/data/donationLocations.json";
+import "@/lib/leaflet-icons";
 
 export default function MapPreview() {
   return (

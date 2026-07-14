@@ -8,9 +8,9 @@ import AnimatedCounter from "../components/shared/AnimatedCounter";
 import SectionHeading from "../components/shared/SectionHeading";
 
 const mainStats = [
-  { icon: MapPin, value: 15, suffix: "+", label: "Donation Sites", desc: "Across Philadelphia schools and businesses" },
-  { icon: Glasses, value: 250, suffix: "+", label: "Eyeglasses Collected", desc: "Donated by our generous community" },
-  { icon: Briefcase, value: 100, suffix: "+", label: "Cases Collected", desc: "Protecting glasses during distribution" },
+  { icon: MapPin, value: 25, suffix: "+", label: "Donation Sites", desc: "Across Philadelphia schools and businesses" },
+  { icon: Glasses, value: 1000, suffix: "+", label: "Eyeglasses Collected", desc: "Donated by our generous community" },
+  { icon: Briefcase, value: 500, suffix: "+", label: "Cases Collected", desc: "Protecting glasses during distribution" },
 ];
 
 const growthMetrics = [

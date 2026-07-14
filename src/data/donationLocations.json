@@ -182,6 +182,19 @@
     "featured": false
   },
   {
+    "id": "battlegrounds-gym",
+    "name": "Battlegrounds Gym",
+    "address": "122 Mill Rd",
+    "city": "Oaks",
+    "state": "PA",
+    "zip": "19460",
+    "latitude": 40.1301,
+    "longitude": -75.4522,
+    "type": "business",
+    "status": "active",
+    "featured": false
+  },
+  {
     "id": "69ffc2cf7e6d6316e36ffa84",
     "name": "Siepser Eyecare",
     "address": "860 E Swedesford Rd",

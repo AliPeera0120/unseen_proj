@@ -4,9 +4,9 @@ import { MapPin, Glasses, Briefcase } from "lucide-react";
 import AnimatedCounter from "../shared/AnimatedCounter";
 
 const stats = [
-  { icon: MapPin, value: 15, suffix: "+", label: "Donation Sites", color: "bg-primary/10 text-primary" },
-  { icon: Glasses, value: 250, suffix: "+", label: "Eyeglasses Collected", color: "bg-accent/10 text-accent" },
-  { icon: Briefcase, value: 100, suffix: "+", label: "Cases Collected", color: "bg-chart-3/10 text-chart-3" },
+  { icon: MapPin, value: 25, suffix: "+", label: "Donation Sites", color: "bg-primary/10 text-primary" },
+  { icon: Glasses, value: 1000, suffix: "+", label: "Eyeglasses Collected", color: "bg-accent/10 text-accent" },
+  { icon: Briefcase, value: 500, suffix: "+", label: "Cases Collected", color: "bg-chart-3/10 text-chart-3" },
 ];
 
 export default function StatsSection() {

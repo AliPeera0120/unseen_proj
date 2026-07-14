@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import locations from "@/data/donationLocations.json";
+import "@/lib/leaflet-icons";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Circle } from "react-leaflet";
 import { motion } from "framer-motion";
 import MapFilters from "../components/map/MapFilters";
