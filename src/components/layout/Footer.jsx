@@ -29,6 +29,7 @@ export default function Footer() {
                 { label: "Donation Map", path: "/map" },
                 { label: "About Us", path: "/about" },
                 { label: "Our Impact", path: "/impact" },
+                { label: "Events", path: "/events" },
                 { label: "Get Involved", path: "/get-involved" },
               ].map((link) => (
                 <Link

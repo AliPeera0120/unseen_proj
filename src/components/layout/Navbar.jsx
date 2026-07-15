@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Donation Map", path: "/map" },
   { label: "About", path: "/about" },
   { label: "Impact", path: "/impact" },
+  { label: "Events", path: "/events" },
   { label: "Get Involved", path: "/get-involved" },
   { label: "Contact", path: "/contact" },
 ];

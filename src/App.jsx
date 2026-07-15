@@ -9,6 +9,7 @@ import DonationMap from './pages/DonationMap';
 import About from './pages/About';
 import Impact from './pages/Impact';
 import GetInvolved from './pages/GetInvolved';
+import Events from './pages/Events';
 import Contact from './pages/Contact';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
