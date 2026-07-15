@@ -15,7 +15,7 @@ const events = [
     address: "1221 Race St, Philadelphia, PA 19107",
     description:
       "The Unseen Project is giving away glasses and sunglasses to people in need — completely free. Every pair of glasses can change a life. Be the reason someone sees a better tomorrow.",
-    poster: "/images/gift-of-vision-poster.png",
+    poster: "/images/gift-of-vision-poster.jpg",
   },
   {
     title: "Glasses & Sunglasses Giveaway",
