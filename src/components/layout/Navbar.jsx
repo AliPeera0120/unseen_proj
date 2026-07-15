@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const LOGO_URL = "https://media.base44.com/images/public/69ebed55a2b77ce4342a0caf/5249a9601_UnseenLogo.png";
+const LOGO_URL = "/images/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [

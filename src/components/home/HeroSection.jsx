@@ -17,7 +17,7 @@ export default function HeroSection() {
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[70%] hidden lg:block">
         <div className="w-full h-full rounded-l-3xl overflow-hidden opacity-90">
           <img 
-            src="https://media.base44.com/images/public/69e83cf8c4dd316fee3a8deb/656fe3f9d_generated_1380d52c.png" 
+            src="/images/hero.png" 
             alt="Community members donating eyeglasses" 
             className="w-full h-full object-cover"
           />
@@ -34,7 +34,7 @@ export default function HeroSection() {
             className="flex items-center gap-4 mb-6"
           >
             <img
-              src="https://media.base44.com/images/public/69ebed55a2b77ce4342a0caf/5249a9601_UnseenLogo.png"
+              src="/images/logo.png"
               alt="The Unseen Project"
               className="h-20 w-20 object-contain"
             />
