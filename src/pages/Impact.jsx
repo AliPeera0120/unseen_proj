@@ -14,16 +14,16 @@ const mainStats = [
 ];
 
 const growthMetrics = [
-  { label: "Partner Shelters", value: 8, suffix: "+", icon: Building2 },
+  { label: "Partner Shelters", value: 2, suffix: "", icon: Building2 },
   { label: "Volunteers", value: 30, suffix: "+", icon: Users },
-  { label: "Growth Rate", value: 40, suffix: "%", icon: TrendingUp },
+  { label: "Items Collected", value: 1500, suffix: "+", icon: TrendingUp },
 ];
 
 const milestones = [
-  { date: "2024", title: "First Donation Box", desc: "Placed our first collection box at a Philadelphia high school." },
-  { date: "2024", title: "10 Locations", desc: "Expanded to 10 donation sites across the city." },
-  { date: "2025", title: "250+ Glasses", desc: "Reached a milestone of 250+ eyeglasses collected." },
-  { date: "2025", title: "Growing Network", desc: "Partnering with more shelters and community organizations." },
+  { date: "2025", title: "First Donation Box", desc: "Placed our first collection box at a school in the Philadelphia suburbs — it filled up within weeks." },
+  { date: "Early 2026", title: "25+ Locations", desc: "Expanded to more than 25 donation sites across schools, businesses, and community centers." },
+  { date: "2026", title: "1,000+ Glasses", desc: "Passed 1,000 eyeglasses and 500 cases collected from our generous community." },
+  { date: "Summer 2026", title: "First Giveaway Events", desc: "Began distributing free glasses and sunglasses directly to people in need at St. John's Hospice and Covenant House." },
 ];
 
 export default function Impact() {

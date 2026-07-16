@@ -91,19 +91,26 @@ export default function About() {
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  It started with a school project and a simple question: what happens to all the eyeglasses 
-                  people no longer use? We discovered that most go in a drawer or the trash, while thousands 
-                  of people in our own city can't afford the vision care they desperately need.
+                  It started with a simple question: what happens to all the eyeglasses people no longer
+                  use? The answer, we found, was almost nothing — perfectly good glasses sit forgotten in
+                  drawers and closets across the region, while thousands of people in and around
+                  Philadelphia can't afford the vision care they desperately need.
                 </p>
                 <p>
-                  We placed our first donation box in a local high school in Philadelphia. Within weeks, it 
-                  was full. That one box showed us the power of community generosity — and the urgent need 
-                  for accessible vision care.
+                  For many people experiencing homelessness, poor vision is one more barrier stacked on top
+                  of everything else. It makes it harder to read paperwork, fill out a job application, or
+                  simply move through the world safely. And yet a solution was sitting unused in our
+                  neighbors' homes.
                 </p>
                 <p>
-                  Today, The Unseen Project operates donation boxes across schools, businesses, and community 
-                  centers throughout Philadelphia, connecting unused eyeglasses with the homeless shelters that 
-                  need them most.
+                  We placed our first donation box at a school in the suburbs of Philadelphia. Within weeks,
+                  it was full. That one box showed us the power of community generosity — and how many
+                  people were looking for an easy way to help.
+                </p>
+                <p>
+                  Today, The Unseen Project operates donation boxes across schools, businesses, and community
+                  centers throughout the Philadelphia area, connecting unused eyeglasses with the shelters
+                  and communities that need them most — and we're just getting started.
                 </p>
               </div>
             </motion.div>
