@@ -21,10 +21,21 @@ export default function MapFilters({ activeType, setActiveType, onGeocode, userL
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(
-        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query + ", PA")}&format=json&limit=1`
-      );
-      const data = await res.json();
+      const search = async (searchQuery) => {
+        const res = await fetch(
+          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(searchQuery)}&format=json&limit=1`
+        );
+        if (!res.ok) throw new Error("Geocoding request failed");
+        return res.json();
+      };
+
+      let data = await search(query.trim());
+
+      // Keep local shorthand searches convenient while allowing international addresses.
+      if (data.length === 0 && !/\bPA\b|pennsylvania/i.test(query)) {
+        data = await search(`${query.trim()}, PA`);
+      }
+
       if (data.length > 0) {
         onGeocode({ lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), label: data[0].display_name });
       } else {

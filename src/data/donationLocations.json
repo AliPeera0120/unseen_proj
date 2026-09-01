@@ -206,5 +206,44 @@
     "type": "business",
     "status": "active",
     "featured": true
+  },
+  {
+    "id": "autozone-royersford",
+    "name": "AutoZone Royersford",
+    "address": "301 N Lewis Rd",
+    "city": "Royersford",
+    "state": "PA",
+    "zip": "19468",
+    "latitude": 40.1943,
+    "longitude": -75.5341,
+    "type": "business",
+    "status": "active",
+    "featured": false
+  },
+  {
+    "id": "fieldstone-chester-springs",
+    "name": "Fieldstone at Chester Springs",
+    "address": "145 Byers Rd",
+    "city": "Chester Springs",
+    "state": "PA",
+    "zip": "19425",
+    "latitude": 40.0789,
+    "longitude": -75.6836,
+    "type": "community_center",
+    "status": "active",
+    "featured": false
+  },
+  {
+    "id": "alpha-mri-diagnostics-gk1",
+    "name": "Alpha MRI & Diagnostics",
+    "address": "E-16, E Block, Greater Kailash I",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "zip": "110048",
+    "latitude": 28.5489,
+    "longitude": 77.2401,
+    "type": "business",
+    "status": "active",
+    "featured": false
   }
 ]
