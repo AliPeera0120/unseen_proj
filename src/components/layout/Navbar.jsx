@@ -20,7 +20,7 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-foreground/10 bg-background/95 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-[100] border-b border-foreground/10 bg-background/95 backdrop-blur-md">
       <div className="site-container flex h-[76px] items-center justify-between">
         <Link to="/" className="flex items-center gap-3" aria-label="The Unseen Project home">
           <img src="/images/logo.png" alt="" className="h-11 w-11 object-contain" />
