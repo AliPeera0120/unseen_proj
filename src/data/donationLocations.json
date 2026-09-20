@@ -260,5 +260,44 @@
     "type": "collection_site",
     "status": "active",
     "featured": false
+  },
+  {
+    "id": "canterbury-high-school-ottawa",
+    "name": "Canterbury High School",
+    "address": "900 Canterbury Ave",
+    "city": "Ottawa",
+    "state": "ON",
+    "zip": "K1G 3A7",
+    "latitude": 45.3875621,
+    "longitude": -75.625849,
+    "type": "school",
+    "status": "active",
+    "featured": false
+  },
+  {
+    "id": "devon-preparatory-school",
+    "name": "Devon Preparatory School",
+    "address": "363 N Valley Forge Rd",
+    "city": "Devon",
+    "state": "PA",
+    "zip": "19333",
+    "latitude": 40.05528,
+    "longitude": -75.42111,
+    "type": "school",
+    "status": "active",
+    "featured": false
+  },
+  {
+    "id": "downingtown-stem-academy",
+    "name": "Downingtown STEM Academy",
+    "address": "335 Manor Ave",
+    "city": "Downingtown",
+    "state": "PA",
+    "zip": "19335",
+    "latitude": 40.0090286,
+    "longitude": -75.7142207,
+    "type": "school",
+    "status": "active",
+    "featured": false
   }
 ]
