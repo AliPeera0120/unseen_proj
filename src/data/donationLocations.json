@@ -247,5 +247,18 @@
     "type": "business",
     "status": "active",
     "featured": false
+  },
+  {
+    "id": "wilson-drive-west-chester",
+    "name": "Wilson Drive Collection Box",
+    "address": "1200 Wilson Drive",
+    "city": "West Chester",
+    "state": "PA",
+    "zip": "19380",
+    "latitude": 39.9932607,
+    "longitude": -75.5839723,
+    "type": "collection_site",
+    "status": "active",
+    "featured": false
   }
 ]

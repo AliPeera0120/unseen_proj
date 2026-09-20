@@ -13,7 +13,7 @@ npm run dev
 
 ## Editing content
 
-- **Donation locations** (map + impact count): edit `src/data/donationLocations.json`. Each entry needs name, address, city, state, zip, latitude, longitude, type (`school` | `business` | `community_center`), status (`active` | `full` | `needs_pickup`), and featured (true/false). Add `boxCount` only when one address has more than one physical box; otherwise it defaults to 1.
+- **Donation locations** (map + impact count): edit `src/data/donationLocations.json`. Each entry needs name, address, city, state, zip, latitude, longitude, type (`school` | `business` | `community_center` | `collection_site`), status (`active` | `full` | `needs_pickup`), and featured (true/false). Add `boxCount` only when one address has more than one physical box; otherwise it defaults to 1.
 - **Featured events**: edit `src/data/events.js`. Event images live in `public/images/community/`.
 - **Confirmed impact totals**: edit `src/data/siteData.js`. The public collection-box figure is calculated from the location data and rounded down automatically.
 - **Pages**: edit the files in `src/pages/`.

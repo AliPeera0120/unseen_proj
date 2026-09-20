@@ -8,6 +8,7 @@ const typeFilters = [
   { value: "school", label: "Schools", icon: School },
   { value: "business", label: "Businesses", icon: Building2 },
   { value: "community_center", label: "Community", icon: Users },
+  { value: "collection_site", label: "Other Sites", icon: MapPin },
 ];
 
 export default function MapFilters({ activeType, setActiveType, onGeocode, userLocation, onClearLocation }) {
