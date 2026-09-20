@@ -51,9 +51,9 @@ export default function Home() {
     <div>
       <HeroSection />
       <StatsSection />
+      <TeamPreview />
       <AboutPreview />
       <MapPreview />
-      <TeamPreview />
       <ActivityPreview />
       <CTASection />
     </div>
