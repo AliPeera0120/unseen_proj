@@ -3,6 +3,7 @@ import HeroSection from "../components/home/HeroSection";
 import StatsSection from "../components/home/StatsSection";
 import AboutPreview from "../components/home/AboutPreview";
 import MapPreview from "../components/home/MapPreview";
+import TeamPreview from "../components/home/TeamPreview";
 import CTASection from "../components/home/CTASection";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -53,6 +54,7 @@ export default function Home() {
       <AboutPreview />
       <MapPreview />
       <ActivityPreview />
+      <TeamPreview />
       <CTASection />
     </div>
   );

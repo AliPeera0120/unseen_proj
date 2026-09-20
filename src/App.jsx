@@ -11,6 +11,7 @@ const Impact = React.lazy(() => import('./pages/Impact'));
 const GetInvolved = React.lazy(() => import('./pages/GetInvolved'));
 const Events = React.lazy(() => import('./pages/Events'));
 const Contact = React.lazy(() => import('./pages/Contact'));
+const Team = React.lazy(() => import('./pages/Team'));
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/team" element={<Team />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>

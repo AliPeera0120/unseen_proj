@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Impact", path: "/impact" },
   { label: "Locations", path: "/map" },
   { label: "Events", path: "/events" },
+  { label: "Meet the Team", path: "/team" },
   { label: "Get Involved", path: "/get-involved" },
   { label: "Contact", path: "/contact" },
 ];

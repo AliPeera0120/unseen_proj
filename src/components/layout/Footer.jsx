@@ -7,6 +7,7 @@ const links = [
   ["Impact", "/impact"],
   ["Donation locations", "/map"],
   ["Events", "/events"],
+  ["Meet the Team", "/team"],
   ["Get involved", "/get-involved"],
   ["Contact", "/contact"],
 ];
