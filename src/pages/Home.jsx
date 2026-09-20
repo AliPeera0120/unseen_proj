@@ -53,8 +53,8 @@ export default function Home() {
       <StatsSection />
       <AboutPreview />
       <MapPreview />
-      <ActivityPreview />
       <TeamPreview />
+      <ActivityPreview />
       <CTASection />
     </div>
   );
