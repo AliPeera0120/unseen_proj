@@ -1,175 +1,84 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Package, Truck, Eye, Heart, ArrowRight } from "lucide-react";
-import SectionHeading from "../components/shared/SectionHeading";
 
-const processSteps = [
-  {
-    icon: Package,
-    num: "01",
-    title: "Donation",
-    desc: "Community members drop off eyeglasses and cases at collection boxes placed in schools, businesses, and community centers throughout Philadelphia.",
-  },
-  {
-    icon: Truck,
-    num: "02",
-    title: "Collection",
-    desc: "Our team regularly visits each site to collect donated items and transport them to our sorting facility.",
-  },
-  {
-    icon: Eye,
-    num: "03",
-    title: "Sorting",
-    desc: "Each pair of glasses is cleaned, categorized by prescription type, and prepared for distribution.",
-  },
-  {
-    icon: Heart,
-    num: "04",
-    title: "Distribution",
-    desc: "Sorted eyeglasses are delivered to homeless shelters across Philadelphia, matched to individuals in need.",
-  },
+const steps = [
+  ["01", "Donate", "Community members bring eyeglasses and cases to collection boxes in schools, businesses, and gathering places."],
+  ["02", "Collect", "Our team gathers the donations from host sites and brings them together for preparation."],
+  ["03", "Sort", "Volunteers clean, organize, and prepare each usable pair for distribution."],
+  ["04", "Share", "Prepared eyewear is brought to community partners and distribution events for people in need."],
 ];
 
 export default function About() {
   return (
-    <div className="pt-16 lg:pt-20">
-      {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-primary/5 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
-              About Us
-            </span>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight">
-              Helping communities <span className="text-primary">see clearly</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              The Unseen Project was born from a simple observation: millions of eyeglasses sit unused in drawers 
-              while people experiencing homelessness struggle with impaired vision every day. We bridge that gap.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Mission */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading
-              label="Our Mission"
-              title="Vision care for everyone"
-              description="We believe that clear vision is a basic human need, not a luxury. Our mission is to collect 
-              unused eyeglasses from the community and deliver them to homeless shelters — empowering 
-              individuals to read, find work, and navigate the world with dignity."
-            />
+    <div>
+      <section className="page-intro">
+        <div className="site-container grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div>
+            <p className="eyebrow">About The Unseen Project</p>
+            <h1 className="page-title mt-6">A simple idea, put into action.</h1>
           </div>
-        </div>
-      </section>
-
-      {/* Origin */}
-      <section className="py-20 lg:py-28 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
-                Our Story
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground leading-tight mb-6">
-                How it all started
-              </h2>
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>
-                  It started with a simple question: what happens to all the eyeglasses people no longer
-                  use? The answer, we found, was almost nothing — perfectly good glasses sit forgotten in
-                  drawers and closets across the region, while thousands of people in and around
-                  Philadelphia can't afford the vision care they desperately need.
-                </p>
-                <p>
-                  For many people experiencing homelessness, poor vision is one more barrier stacked on top
-                  of everything else. It makes it harder to read paperwork, fill out a job application, or
-                  simply move through the world safely. And yet a solution was sitting unused in our
-                  neighbors' homes.
-                </p>
-                <p>
-                  We placed our first donation box at a school in the suburbs of Philadelphia. Within weeks,
-                  it was full. That one box showed us the power of community generosity — and how many
-                  people were looking for an easy way to help.
-                </p>
-                <p>
-                  Today, The Unseen Project operates donation boxes across schools, businesses, and community
-                  centers throughout the Philadelphia area, connecting unused eyeglasses with the shelters
-                  and communities that need them most — and we're just getting started.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="How It Works"
-            title="From donation to impact"
-            description="A simple four-step process that turns unused eyeglasses into life-changing tools."
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, i) => (
-              <motion.div
-                key={step.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
-              >
-                <span className="text-5xl font-serif font-bold text-muted/60">{step.num}</span>
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mt-4 mb-4">
-                  <step.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground text-lg">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 lg:py-28 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">
-            Ready to make a difference?
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Whether you have glasses to donate or want to host a collection box, we'd love to hear from you.
+          <p className="max-w-xl text-lg leading-8 text-muted-foreground">
+            Usable glasses sit forgotten in drawers while people in our communities live with impaired vision. We connect one with the other.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/get-involved">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 gap-2">
-                Get Involved
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <Link to="/map">
-              <Button variant="outline" className="rounded-xl px-8 gap-2 border-border">
-                Find a Box
-              </Button>
-            </Link>
+        </div>
+      </section>
+
+      <section className="site-container">
+        <img src="/images/community/team-at-service.jpg" alt="The Unseen Project student team at a community service event" className="h-[65vh] min-h-[500px] w-full object-cover object-[center_34%]" />
+      </section>
+
+      <section className="section-space">
+        <div className="site-container grid gap-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+          <div><p className="eyebrow">Our mission</p></div>
+          <div>
+            <h2 className="section-title">Make clear vision more accessible through community collection.</h2>
+            <div className="mt-10 grid gap-7 text-base leading-8 text-muted-foreground md:grid-cols-2">
+              <p>We collect unused prescription glasses, reading glasses, sunglasses, and cases, then prepare them for redistribution to people who need them.</p>
+              <p>The model is deliberately simple: local host sites make it easy to donate, and student volunteers keep the work moving from box to distribution.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-foreground text-white section-space">
+        <div className="site-container grid gap-14 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <p className="eyebrow text-primary">Our story</p>
+            <h2 className="section-title mt-5">It started with a question.</h2>
+          </div>
+          <div className="space-y-6 text-base leading-8 text-white/65">
+            <p>What happens to the eyeglasses people no longer use? Too often, perfectly good pairs remain forgotten while people nearby cannot access the vision support they need.</p>
+            <p>The Unseen Project began with a collection box at a school in the Philadelphia suburbs. It filled within weeks, showing both the scale of the unused supply and the community’s willingness to help.</p>
+            <p>Today, collection boxes across schools, businesses, and community spaces turn that willingness into a practical network of support.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
+        <div className="site-container">
+          <p className="eyebrow">How it works</p>
+          <h2 className="section-title mt-5 max-w-3xl">From the back of a drawer to a clearer day.</h2>
+          <ol className="mt-14 grid border-y border-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map(([number, title, description], index) => (
+              <li key={number} className={`py-8 sm:px-7 lg:py-10 ${index ? "border-t border-foreground/15 sm:border-l sm:border-t-0" : ""}`}>
+                <span className="font-serif text-3xl text-primary">{number}</span>
+                <h3 className="mt-7 font-serif text-3xl">{title}</h3>
+                <p className="mt-4 text-sm leading-6 text-muted-foreground">{description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="bg-secondary/60">
+        <div className="site-container grid lg:grid-cols-2">
+          <img src="/images/community/volunteer-sorting.jpg" alt="A student volunteer sorting donated eyeglasses" loading="lazy" className="h-[620px] w-full object-cover" />
+          <div className="flex flex-col justify-center px-0 py-16 sm:px-12 lg:px-20">
+            <p className="eyebrow">Student leadership</p>
+            <h2 className="section-title mt-5">Young people doing tangible work.</h2>
+            <p className="mt-6 max-w-xl leading-7 text-muted-foreground">Our volunteers do more than raise awareness. They place boxes, collect donations, sort eyewear, and help bring distribution events to life.</p>
+            <Link to="/get-involved" className="rule-link mt-8 w-fit">Work with us <ArrowUpRight className="h-4 w-4" /></Link>
           </div>
         </div>
       </section>

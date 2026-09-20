@@ -13,22 +13,18 @@ npm run dev
 
 ## Editing content
 
-- **Donation locations** (map + home preview): edit `src/data/donationLocations.json`. Each entry needs name, address, city, state, zip, latitude, longitude, type (`school` | `business` | `community_center`), status (`active` | `full` | `needs_pickup`), and featured (true/false).
+- **Donation locations** (map + impact count): edit `src/data/donationLocations.json`. Each entry needs name, address, city, state, zip, latitude, longitude, type (`school` | `business` | `community_center`), status (`active` | `full` | `needs_pickup`), and featured (true/false). Add `boxCount` only when one address has more than one physical box; otherwise it defaults to 1.
+- **Featured events**: edit `src/data/events.js`. Event images live in `public/images/community/`.
+- **Confirmed impact totals**: edit `src/data/siteData.js`. The public collection-box figure is calculated from the location data and rounded down automatically.
 - **Pages**: edit the files in `src/pages/`.
 
 ## Contact form
 
 The Contact page opens the visitor's email app (mailto) addressed to theunseenprojectofficial@gmail.com.
 
-## Images
+## Media
 
-The logo and hero image are still hosted on Base44 URLs. To make the site fully self-contained, run once from the repo root:
-
-```
-bash scripts/localize-images.sh
-```
-
-This downloads them into `public/images/` and rewrites the code to use local paths. Commit the result.
+Organization photography lives in `public/images/community/`. The Events hero video is `public/video/community-news-feature.mp4`, with its poster image beside the other community photos.
 
 ## Deployment
 

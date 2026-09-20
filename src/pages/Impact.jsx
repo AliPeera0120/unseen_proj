@@ -1,164 +1,70 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Glasses, Briefcase, TrendingUp, Users, Building2, ArrowRight } from "lucide-react";
-import AnimatedCounter from "../components/shared/AnimatedCounter";
-import SectionHeading from "../components/shared/SectionHeading";
+import { collectionBoxCount, collectionLocationCount, impact, publicCollectionBoxCount } from "@/data/siteData";
 
-const mainStats = [
-  { icon: MapPin, value: 25, suffix: "+", label: "Donation Sites", desc: "Across Philadelphia schools and businesses" },
-  { icon: Glasses, value: 1000, suffix: "+", label: "Eyeglasses Collected", desc: "Donated by our generous community" },
-  { icon: Briefcase, value: 500, suffix: "+", label: "Cases Collected", desc: "Protecting glasses during distribution" },
-];
-
-const growthMetrics = [
-  { label: "Partner Shelters", value: 2, suffix: "", icon: Building2 },
-  { label: "Volunteers", value: 30, suffix: "+", icon: Users },
-  { label: "Items Collected", value: 1500, suffix: "+", icon: TrendingUp },
-];
-
-const milestones = [
-  { date: "2025", title: "First Donation Box", desc: "Placed our first collection box at a school in the Philadelphia suburbs — it filled up within weeks." },
-  { date: "Early 2026", title: "25+ Locations", desc: "Expanded to more than 25 donation sites across schools, businesses, and community centers." },
-  { date: "2026", title: "1,000+ Glasses", desc: "Passed 1,000 eyeglasses and 500 cases collected from our generous community." },
-  { date: "Summer 2026", title: "First Giveaway Events", desc: "Began distributing free glasses and sunglasses directly to people in need at St. John's Hospice and Covenant House." },
+const metrics = [
+  [impact.glassesLabel, "Pairs of glasses collected", "Prescription glasses, readers, and sunglasses donated by the community."],
+  [impact.casesLabel, "Eyeglass cases collected", "Protective cases gathered alongside eyewear for safer handling and distribution."],
+  [`${publicCollectionBoxCount}+`, "Collection boxes", `${collectionBoxCount} physical boxes across ${collectionLocationCount} active locations in the current directory.`],
 ];
 
 export default function Impact() {
   return (
-    <div className="pt-16 lg:pt-20">
-      {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-accent/5 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
-              Our Impact
-            </span>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight max-w-3xl mx-auto">
-              Measuring what <span className="text-primary">matters</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Every pair of donated eyeglasses represents someone who can now read, navigate the world, 
-              and take one more step toward independence.
-            </p>
-          </motion.div>
+    <div>
+      <section className="page-intro">
+        <div className="site-container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+          <div>
+            <p className="eyebrow">Our impact</p>
+            <h1 className="page-title mt-6">Small objects. Real momentum.</h1>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-muted-foreground">Every collection box gives a community an easy way to act. Every usable pair moves that action toward a person who needs it.</p>
         </div>
       </section>
 
-      {/* Main Stats */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-3 gap-6">
-            {mainStats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <Card className="border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                      <stat.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="text-5xl font-serif font-semibold text-foreground">
-                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                    </div>
-                    <p className="mt-2 font-semibold text-foreground">{stat.label}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{stat.desc}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+      <section className="site-container pb-20 lg:pb-28">
+        <div className="grid lg:grid-cols-[1.25fr_0.75fr]">
+          <img src="/images/community/glasses-selection.jpg" alt="A large selection of collected eyeglasses" className="h-[620px] w-full object-cover" />
+          <div className="flex flex-col justify-end bg-primary p-8 text-white sm:p-12 lg:p-14">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">What progress looks like</p>
+            <p className="mt-7 font-serif text-4xl leading-[1.08] sm:text-5xl">A table full of donated glasses is not the finish line. It is the beginning of someone’s clearer view.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-foreground text-white section-space">
+        <div className="site-container">
+          <div className="grid border-y border-white/15 lg:grid-cols-3">
+            {metrics.map(([value, label, description], index) => (
+              <article key={label} className={`py-10 lg:px-10 lg:py-14 ${index ? "border-t border-white/15 lg:border-l lg:border-t-0" : ""}`}>
+                <p className="font-serif text-7xl tracking-[-0.045em] text-primary lg:text-8xl">{value}</p>
+                <h2 className="mt-5 text-lg font-semibold">{label}</h2>
+                <p className="mt-3 max-w-sm text-sm leading-6 text-white/55">{description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Growth */}
-      <section className="py-16 lg:py-24 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Growth"
-            title="Building momentum"
-            description="Our community continues to grow as more people join the mission."
-          />
-          <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {growthMetrics.map((metric, i) => (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center p-6"
-              >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-3">
-                  <metric.icon className="w-5 h-5 text-accent" />
-                </div>
-                <div className="text-3xl font-serif font-semibold text-foreground">
-                  <AnimatedCounter end={metric.value} suffix={metric.suffix} />
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">{metric.label}</p>
-              </motion.div>
-            ))}
+      <section className="section-space">
+        <div className="site-container grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <div>
+            <p className="eyebrow">The network effect</p>
+            <h2 className="section-title mt-5">Built one host site at a time.</h2>
+            <p className="mt-6 leading-7 text-muted-foreground">Schools, businesses, libraries, faith communities, and other local spaces make the project visible and keep donating convenient.</p>
+            <Link to="/map" className="rule-link mt-8">View every location <ArrowUpRight className="h-4 w-4" /></Link>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img src="/images/community/collection-box-cinema.jpg" alt="Collection box at a cinema" loading="lazy" className="h-[500px] w-full object-cover" />
+            <img src="/images/community/collection-box-gym.jpg" alt="Collection box at a local gym" loading="lazy" className="mt-20 h-[500px] w-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Milestones"
-            title="Our journey so far"
-          />
-          <div className="max-w-2xl mx-auto space-y-0">
-            {milestones.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative pl-10 pb-10 last:pb-0"
-              >
-                <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                </div>
-                {i < milestones.length - 1 && (
-                  <div className="absolute left-[11px] top-7 w-0.5 h-full bg-border" />
-                )}
-                <span className="text-xs font-semibold text-primary uppercase tracking-wider">{item.date}</span>
-                <h3 className="font-semibold text-foreground mt-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">
-            Help us grow the impact
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Every donation box, every volunteer, and every pair of glasses moves us closer to our goal.
-          </p>
-          <Link to="/get-involved" className="inline-block mt-8">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 gap-2">
-              Get Involved
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </Link>
+      <section className="border-t border-foreground/15">
+        <div className="site-container flex flex-col gap-7 py-14 sm:flex-row sm:items-center sm:justify-between lg:py-20">
+          <h2 className="max-w-3xl font-serif text-4xl leading-none sm:text-5xl">The next pair can come from you.</h2>
+          <Link to="/get-involved" className="brand-button shrink-0">Take part <ArrowUpRight className="h-4 w-4" /></Link>
         </div>
       </section>
     </div>

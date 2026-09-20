@@ -15,6 +15,7 @@
   {
     "id": "69ffc2cf7e6d6316e36ffa77",
     "name": "Spring City Public Library (2 boxes)",
+    "boxCount": 2,
     "address": "245 Broad St",
     "city": "Spring City",
     "state": "PA",
@@ -132,6 +133,7 @@
   {
     "id": "69ffc2cf7e6d6316e36ffa80",
     "name": "St. Mary of the Assumption Parish (2 boxes)",
+    "boxCount": 2,
     "address": "100 St Marys St",
     "city": "Phoenixville",
     "state": "PA",

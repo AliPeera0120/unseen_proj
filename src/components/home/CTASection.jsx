@@ -1,44 +1,25 @@
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Heart, ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-3xl bg-gradient-to-br from-primary to-accent overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_50%)]" />
-          <div className="relative px-8 py-16 sm:px-12 lg:px-20 lg:py-20 text-center">
-            <Heart className="w-10 h-10 text-white/80 mx-auto mb-6" />
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight max-w-2xl mx-auto">
-              Every pair of glasses makes a difference
-            </h2>
-            <p className="mt-5 text-white/80 text-base lg:text-lg max-w-lg mx-auto">
-              Join our mission to restore vision and empower lives across Philadelphia's homeless community.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/get-involved">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-xl px-8 h-13 text-base gap-2 shadow-lg">
-                  Get Involved
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-xl px-8 h-13 text-base">
-                  Contact Us
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
+    <section className="bg-primary text-white">
+      <div className="site-container grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_auto] lg:items-end lg:py-24">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">Put an old pair to work</p>
+          <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+            Help make clear sight more accessible.
+          </h2>
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+          <Link to="/map" className="inline-flex min-h-12 items-center justify-center gap-2 bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-foreground hover:text-white">
+            Find a box <ArrowUpRight className="h-4 w-4" />
+          </Link>
+          <Link to="/contact" className="inline-flex min-h-12 items-center justify-center border border-white/45 px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-foreground">
+            Host a collection
+          </Link>
+        </div>
       </div>
     </section>
   );

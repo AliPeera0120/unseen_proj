@@ -1,21 +1,21 @@
 import { Toaster } from "@/components/ui/toaster"
-import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClientInstance } from '@/lib/query-client'
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import Layout from './components/layout/Layout';
-import Home from './pages/Home';
-import DonationMap from './pages/DonationMap';
-import About from './pages/About';
-import Impact from './pages/Impact';
-import GetInvolved from './pages/GetInvolved';
-import Events from './pages/Events';
-import Contact from './pages/Contact';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const DonationMap = React.lazy(() => import('./pages/DonationMap'));
+const About = React.lazy(() => import('./pages/About'));
+const Impact = React.lazy(() => import('./pages/Impact'));
+const GetInvolved = React.lazy(() => import('./pages/GetInvolved'));
+const Events = React.lazy(() => import('./pages/Events'));
+const Contact = React.lazy(() => import('./pages/Contact'));
 
 function App() {
   return (
-    <QueryClientProvider client={queryClientInstance}>
-      <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Suspense fallback={<div className="grid min-h-screen place-items-center text-sm text-muted-foreground">Loading…</div>}>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -28,9 +28,9 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
-      </Router>
+      </Suspense>
       <Toaster />
-    </QueryClientProvider>
+    </Router>
   )
 }
 

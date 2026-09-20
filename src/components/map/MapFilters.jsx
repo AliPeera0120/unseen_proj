@@ -54,7 +54,7 @@ export default function MapFilters({ activeType, setActiveType, onGeocode, userL
   };
 
   return (
-    <div className="flex flex-col sm:flex-row gap-3">
+    <div className="flex flex-col gap-4 xl:flex-row xl:items-start">
       <div className="flex-1">
         <form onSubmit={handleSearch} className="relative flex gap-2">
           <div className="relative flex-1">
@@ -63,14 +63,15 @@ export default function MapFilters({ activeType, setActiveType, onGeocode, userL
               placeholder="Enter your address, ZIP, or neighborhood..."
               value={query}
               onChange={(e) => { setQuery(e.target.value); setError(""); }}
-              className="pl-10 rounded-xl h-11 border-border pr-4"
+              aria-label="Address, ZIP code, or neighborhood"
+              className="h-12 rounded-none border-foreground/20 bg-white pl-10 pr-4"
             />
           </div>
-          <Button type="submit" disabled={loading} className="rounded-xl h-11 bg-primary text-primary-foreground px-4 shrink-0">
+          <Button type="submit" disabled={loading} className="h-12 shrink-0 rounded-none bg-foreground px-5 text-white hover:bg-primary">
             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Find Nearest"}
           </Button>
           {userLocation && (
-            <Button type="button" variant="outline" onClick={handleClear} className="rounded-xl h-11 px-3 shrink-0">
+            <Button type="button" variant="outline" onClick={handleClear} className="h-12 shrink-0 rounded-none px-3" aria-label="Clear search">
               <X className="w-4 h-4" />
             </Button>
           )}
@@ -80,14 +81,14 @@ export default function MapFilters({ activeType, setActiveType, onGeocode, userL
           <p className="text-xs text-primary mt-1 pl-1">Showing locations sorted by distance from your location.</p>
         )}
       </div>
-      <div className="flex gap-1.5 flex-wrap">
+      <div className="flex flex-wrap gap-2 xl:justify-end">
         {typeFilters.map((filter) => (
           <Button
             key={filter.value}
             variant={activeType === filter.value ? "default" : "outline"}
             size="sm"
             onClick={() => setActiveType(filter.value)}
-            className={`rounded-lg gap-1.5 text-xs ${
+            className={`h-10 rounded-none gap-1.5 text-xs ${
               activeType === filter.value
                 ? "bg-primary text-primary-foreground"
                 : "border-border hover:bg-muted"

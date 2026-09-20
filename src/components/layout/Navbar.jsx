@@ -1,17 +1,12 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-
-const LOGO_URL = "/images/logo.png";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Donation Map", path: "/map" },
   { label: "About", path: "/about" },
   { label: "Impact", path: "/impact" },
+  { label: "Locations", path: "/map" },
   { label: "Events", path: "/events" },
   { label: "Get Involved", path: "/get-involved" },
   { label: "Contact", path: "/contact" },
@@ -19,98 +14,75 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+  useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? "bg-card/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={LOGO_URL} alt="The Unseen Project" className="h-12 w-12 object-contain" />
-            <span className="font-serif font-semibold text-lg text-foreground hidden sm:block">
-              The Unseen Project
-            </span>
-          </Link>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-foreground/10 bg-background/95 backdrop-blur-md">
+      <div className="site-container flex h-[76px] items-center justify-between">
+        <Link to="/" className="flex items-center gap-3" aria-label="The Unseen Project home">
+          <img src="/images/logo.png" alt="" className="h-11 w-11 object-contain" />
+          <span className="font-serif text-lg font-semibold leading-none sm:text-xl">The Unseen Project</span>
+        </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+        <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary navigation">
+          {navLinks.map((link) => {
+            const active = location.pathname === link.path;
+            return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? "text-primary bg-primary/8"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
+                aria-current={active ? "page" : undefined}
+                className={`relative py-2 text-[0.82rem] font-semibold transition-colors hover:text-primary ${active ? "text-primary" : "text-foreground/70"}`}
               >
                 {link.label}
+                {active && <span className="absolute inset-x-0 -bottom-[19px] h-0.5 bg-primary" />}
               </Link>
-            ))}
-          </div>
+            );
+          })}
+        </nav>
 
-          <div className="hidden lg:block">
-            <Link to="/map">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-5">
-                Find a Donation Box
-              </Button>
-            </Link>
-          </div>
+        <Link to="/map" className="brand-button hidden lg:inline-flex">
+          Find a box <ArrowUpRight className="h-4 w-4" />
+        </Link>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-          >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="grid h-11 w-11 place-items-center border border-foreground/15 xl:hidden"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <motion.nav
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card/98 backdrop-blur-lg border-t border-border overflow-hidden"
+            className="overflow-hidden border-t border-foreground/10 bg-background xl:hidden"
+            aria-label="Mobile navigation"
           >
-            <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
+            <div className="site-container py-5">
+              {navLinks.map((link, index) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? "text-primary bg-primary/8"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
+                  className={`flex items-center justify-between border-b border-foreground/10 py-4 text-lg font-semibold ${location.pathname === link.path ? "text-primary" : ""}`}
                 >
-                  {link.label}
+                  <span><span className="mr-4 text-xs text-foreground/35">0{index + 1}</span>{link.label}</span>
+                  <ArrowUpRight className="h-4 w-4" />
                 </Link>
               ))}
-              <div className="pt-3">
-                <Link to="/map">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg">
-                    Find a Donation Box
-                  </Button>
-                </Link>
-              </div>
+              <Link to="/map" className="brand-button mt-5 w-full">Find a donation box</Link>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 }
